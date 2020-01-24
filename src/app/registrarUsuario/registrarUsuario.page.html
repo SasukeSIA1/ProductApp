@@ -11,15 +11,38 @@
 
 <ion-content>
   <ion-card class="welcome-card">
-    <img src="/assets/shapes.svg" alt=""/>
+    <img src="/assets/images/users.png" alt=""/>
     <ion-card-header>
       <ion-card-subtitle>Complete los campos</ion-card-subtitle>
       <ion-card-title>Registro Usuario</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p>
-        Aqui ira todo lo de registro de usuario
-      </p>
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input type="text" [(ngModel)]="objUsuario.usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombre(s)</ion-label>
+        <ion-input type="text" [(ngModel)]="objUsuario.nombres"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellido(s)</ion-label>
+        <ion-input type="text" [(ngModel)]="objUsuario.apellidos" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="objUsuario.contra"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Confirmar contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="objUsuario.repeatcontra"></ion-input>
+      </ion-item>
+      <!--Button-->
+      <ion-button expand="block" (click)="confirmAlert()">
+        <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+        Guardar
+      </ion-button>
     </ion-card-content>
-  </ion-card>
+  </ion-card>  
+  {{ objUsuario | json}}
 </ion-content>
